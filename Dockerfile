@@ -10,6 +10,6 @@ RUN apt-get update && \
 WORKDIR /app
 
 # create the runtime conatiner
-FROM python3.6
+FROM python:3.6
 COPY --from=0 /app .
 CMD ["manage.py", "/app"]
