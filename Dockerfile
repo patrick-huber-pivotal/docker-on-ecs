@@ -4,7 +4,7 @@ FROM ubuntu:xenial
 WORKDIR /app
 
 # copy dependencies 
-COPY ../dependencies/dependency dependencies
+COPY dependencies/dependency dependencies
 
 # add nodejs and python
 RUN apt-get update && \
