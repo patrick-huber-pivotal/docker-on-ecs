@@ -14,4 +14,4 @@ jobs:
       - run: 
           name: Build my dockerfile
           command: |
-            docker build -f /app/web/Dockerfile
+            docker build -f /app/web/Dockerfile .
