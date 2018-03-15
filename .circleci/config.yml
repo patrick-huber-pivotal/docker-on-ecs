@@ -14,12 +14,8 @@ jobs:
       - run: 
           name: Build my dockerfile
           command: |
-            docker build -f /app/web/Dockerfile .
-    deploy:
-        docker:
-          - image: docker:17.05.0-ce-git
-        steps:
-          - run:
-              name: Push to Private Registry
-              command: |
-                 docker push ......
+            docker build -f /app/web/Dockerfile -t $PRIVATE_REPO_NAME:latest .
+      - run: 
+          name: Push the to the private registry
+          command: |
+            docker push -t $PRIVATE_REPO_NAME:latest
