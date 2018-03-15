@@ -2,9 +2,10 @@ FROM ubuntu:xenial
 
 # add nodejs and python
 RUN apt-get update && \
-    apt-get install nodejs npm python python-dev python-pip python-virtualenv && \
-    git clone repo1 && \
-    git clone repo2
+    apt-get install -y python3 python3-pip nodejs npm && \
+    pip3 install --upgrade pip && \
+    pip3 install pipenv && \
+    pip3 install django
 
 WORKDIR /app
 
