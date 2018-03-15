@@ -6,8 +6,12 @@ jobs:
       - image: docker:17.05.0-ce-git
     steps:
       - checkout
+          path: /app/web
       - setup_remote_docker
+      - run:
+          name: Get Dependencies
+          command: git clone https://github.com/patrick-huber-pivotal/dependency dependencies/dependency
       - run: 
           name: Build my dockerfile
           command: |
-            docker build .
+            docker build ./app/web/Dockerfile
